@@ -1,0 +1,26 @@
+﻿@model Commonview
+
+@{
+    ViewData["Title"] = "View";
+}
+
+
+
+<h4>Product Data Entry</h4>
+
+<div class="size">
+
+    <div>
+        <table align="left">
+            <partial name="_BillingPartial" model="Model.BillingCreate" />
+        </table>
+    </div>
+
+
+
+    <div class="text-md-center">
+        <table align="right">
+            <partial name="_ShippingPartial" model="Model.ShippingCreate" />
+        </table>
+    </div>
+</div>
