@@ -7,16 +7,22 @@ namespace BillingSystem.Controllers
 {
     public class BillingController : Controller
     {
-        public BillingAddressess obj;
+        public Commonview obj;
 
         public BillingController() 
         { 
-            obj = new BillingAddressess();
+            obj = new Commonview();
         }
         public ActionResult Index()
         {
-            var model = new BillingAddressess();
-            return View("Mainview", model);
+            var model = new Commonview();
+          model.BillingCreate=new BillingAddressess();
+            model.ShippingCreate=new ShippingAddress();
+            model.AddProduct=new AddProduct();
+/*            return ViewData("Mainview", model,new List<AddProduct>());
+           */    
+             return View("Mainview",model);
+        
         }
         public ActionResult Creates(BillingAddressess data)
         {

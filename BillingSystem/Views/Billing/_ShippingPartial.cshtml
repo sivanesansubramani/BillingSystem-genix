@@ -4,53 +4,66 @@
     ViewData["Title"] = "Shipping";
 }
 
-<h1>Shipping</h1>
 
 <h4>ShippingAddress</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="ShippingCreate">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
+                <input asp-for="Name" class="form-control" placeholder="Enter Name" style="width:fit-content;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
+                <input asp-for="Address" class="form-control" placeholder="Address 1" style="width:fit-content;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;" />
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Address2" class="control-label"></label>
-                <input asp-for="Address2" class="form-control" />
+                @*                 <label asp-for="Address2" class="control-label"></label>
+                *@<input asp-for="Address2" class="form-control" placeholder="Address 2" style="width:fit-content;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;" />
+
                 <span asp-validation-for="Address2" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="City" class="control-label"></label>
-                <input asp-for="City" class="form-control" />
-                <span asp-validation-for="City" class="text-danger"></span>
+                @*                 <label asp-for="City" class="control-label"></label>
+                *@                <select id='selUser' class="form-control" style="width:fit-content;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;">
+                    <option value='0'>Select city</option>
+                    <option value='1'>SRM</option>
+                    <option value='2'>KRCT</option>
+                    <option value='3'>MKCE</option>
+                    <option value='4'>HICET</option>
+                    <option value='5'>PSG</option>
+                    <option value='6'>IIIT</option>
+                    <option value='7'>MIT</option>
+                </select>
+                <div id='result'></div>
+
             </div>
             <div class="form-group">
-                <label asp-for="State" class="control-label"></label>
-                <input asp-for="State" class="form-control" />
-                <span asp-validation-for="State" class="text-danger"></span>
+                @*                 <label asp-for="State" class="control-label"></label>
+                *@                <select id='selUser' class="form-control" style="width:fit-content;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;">
+                    <option value='0'>Select State</option>
+                    <option value='1'>SRM</option>
+                    <option value='2'>KRCT</option>
+                    <option value='3'>MKCE</option>
+                    <option value='4'>HICET</option>
+                    <option value='5'>PSG</option>
+                    <option value='6'>IIIT</option>
+                    <option value='7'>MIT</option>
+                </select>
+                <div id='result'></div>
+
             </div>
             <div class="form-group">
                 <label asp-for="ContactNo" class="control-label"></label>
-                <input asp-for="ContactNo" class="form-control" />
+                <input asp-for="ContactNo" class="form-control" placeholder="Enter Phone Number" style="width:fit-content;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;" />
                 <span asp-validation-for="ContactNo" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

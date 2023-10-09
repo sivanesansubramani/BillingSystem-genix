@@ -4,23 +4,33 @@
     ViewData["Title"] = "View";
 }
 
-
-
-<h4>Product Data Entry</h4>
-
 <div class="size">
 
     <div>
         <table align="left">
+            <thead>
+                <tr>
+                    <th width="1000">
             <partial name="_BillingPartial" model="Model.BillingCreate" />
+                    </th>
+               
+             <th width="1000">
+                    <partial name="_ShippingPartial" model="Model.ShippingCreate" />
+                    </th>
+                </tr>
+            </thead>
         </table>
     </div>
-
-
-
-    <div class="text-md-center">
-        <table align="right">
-            <partial name="_ShippingPartial" model="Model.ShippingCreate" />
+    <div >
+        <table>
+            <partial name="_Addproduct" model="Model.AddProduct" />
         </table>
     </div>
+   @*  <div>
+        <table>
+            <partial name="_Cart" model="Model.AddProduct" />
+        </table>
+    </div> *@
+
+   
 </div>

@@ -5,5 +5,7 @@
         public BillingAddressess BillingCreate { get; set; }
 
         public ShippingAddress ShippingCreate { get; set; }
+
+        public AddProduct AddProduct { get; set; }
     }
 }
