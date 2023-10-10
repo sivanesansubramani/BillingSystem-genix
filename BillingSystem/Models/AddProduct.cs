@@ -8,7 +8,7 @@ namespace BillingSystem.Models
         [Required]
         public string ProductName { get; set; }
         [Required]
-        public int Quantity { get; set; }
+        public string Quantity { get; set; }
         public int Unitprice { get; set; }
         public int Subtotal { get; set; }
 

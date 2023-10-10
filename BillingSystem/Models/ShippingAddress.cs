@@ -17,6 +17,6 @@ namespace BillingSystem.Models
         public String State { get; set; }
         [Required]
         [RegularExpression(@"^[0-9]{10}$")]
-        public long ContactNo { get; set; }
+        public string ContactNo { get; set; }
     }
 }
