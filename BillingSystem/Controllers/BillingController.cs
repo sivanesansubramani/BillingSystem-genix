@@ -19,12 +19,12 @@ namespace BillingSystem.Controllers
           model.BillingCreate=new BillingAddressess();
             model.ShippingCreate=new ShippingAddress();
             model.AddProduct=new AddProduct();
-/*            return ViewData("Mainview", model,new List<AddProduct>());
-           */    
+            model.Cart = new List<AddProduct>();
+    
              return View("Mainview",model);
         
         }
-        public ActionResult Creates(BillingAddressess data)
+        public ActionResult Creates(AddProduct data)
         {
             try
             {
