@@ -22,7 +22,7 @@ namespace BillingSystem.Controllers
             model.ShippingCreate=new ShippingAddress();
             model.AddProduct=new AddProduct();
             model.Cart = new List<AddProduct>();
-            model.Cart= obj1.Selects();
+            model.Cart= obj1.ListProduct();
     
              return View("Mainview",model);
         
