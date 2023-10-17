@@ -8,10 +8,12 @@ namespace BillingSystem.Controllers
     public class BillingController : Controller
     {
         public Commonview obj;
+        public Repo obj1;
 
         public BillingController() 
         { 
             obj = new Commonview();
+            obj1 = new Repo();
         }
         public ActionResult Index()
         {
@@ -20,11 +22,12 @@ namespace BillingSystem.Controllers
             model.ShippingCreate=new ShippingAddress();
             model.AddProduct=new AddProduct();
             model.Cart = new List<AddProduct>();
+            model.Cart= obj1.Selects();
     
              return View("Mainview",model);
         
         }
-        public ActionResult Creates(AddProduct data)
+        public ActionResult Creates(Commonview data)
         {
             try
             {
@@ -35,7 +38,7 @@ namespace BillingSystem.Controllers
                 }
                 else
                 {
-                    return View("Index", data);
+                    return View("Mainview", data);
 
                 }
             }

@@ -1,4 +1,5 @@
-﻿namespace BillingSystem.Models
+﻿
+namespace BillingSystem.Models
 {
     public class Commonview
     {
@@ -8,5 +9,8 @@
 
         public AddProduct AddProduct { get; set; }
         public List<AddProduct> Cart {  get; set; }
+
+
+
     }
 }

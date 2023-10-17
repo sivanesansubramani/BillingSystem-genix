@@ -5,12 +5,15 @@ namespace BillingSystem.Models
     public class AddProduct
     {
         public int No { get; set; }
+        public string Code { get; set; }
         [Required]
         public string ProductName { get; set; }
         [Required]
         public string Quantity { get; set; }
         public int Unitprice { get; set; }
         public int Subtotal { get; set; }
+
+        
 
     }
 }

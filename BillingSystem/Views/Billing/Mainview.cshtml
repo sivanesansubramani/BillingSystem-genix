@@ -6,32 +6,42 @@
 
 <div class="size">
 
-    <div>
-        <table align="left">
-            <thead>
-                <tr>
-                    <th width="1000">
-            <partial name="_BillingPartial" model="Model.BillingCreate" />
-                    </th>
-               
-             <th width="1000">
-                    <partial name="_ShippingPartial" model="Model.ShippingCreate" />
-                    </th>
-                </tr>
-            </thead>
-        </table>
-    </div>
-    <div >
+  <div>
+        <form asp-action="Creates">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <table align="left">
+                <thead>
+                    <tr>
+                        <th width="1000">
+                            <partial name="_BillingPartial" model="Model.BillingCreate" />
+                        </th>
+
+                        <th width="1000">
+                            <partial name="_ShippingPartial" model="Model.ShippingCreate" />
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+            </div>
+
+        <div class="form-group">
         <table>
             <tr>
-            <partial name="_Addproduct" model="Model.AddProduct" />
+                <partial name="_Addproduct" model="Model.AddProduct" />
             </tr>
-            <tr>
+           @*  <tr>
                 <partial name="_Cart" model="Model.Cart" />
-            </tr>
+            </tr> *@
         </table>
+       </div>
+    <div class="form-group">
+        <input type="submit" value="SUBMIT ORDER" class="m-3" style="width:150px;height:50px ;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;" />
     </div>
-    
+    </form>
 
+ </div>
+            
+       
    
 </div>

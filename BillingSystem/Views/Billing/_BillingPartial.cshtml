@@ -8,7 +8,6 @@
 <h4>BillingAddressess</h4>
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="BillingCreate">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"  ></label>
@@ -33,13 +32,12 @@
 
                 <select id="City" name="City"  class="form-control"  style="width:300px;height:50px;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 15px;font-size: 16px;">
                     <option value='0'>Select city</option>
-                    <option value='1'>SRM</option>
-                    <option value='2'>KRCT</option>
-                    <option value='3'>MKCE</option>
-                    <option value='4'>HICET</option>
-                    <option value='5'>PSG</option>
-                    <option value='6'>IIIT</option>
-                    <option value='7'>MIT</option>
+                    <option value='1'>Chennai</option>
+                    <option value='2'>Coimbatore</option>
+                    <option value='3'>Karur</option>
+                    <option value='4'>Palani</option>
+                    <option value='5'>Madurai</option>
+                 
                 </select>
                 <div id='result'></div>     
             </div>
@@ -47,11 +45,11 @@
 @*                 <label asp-for="State" class="control-label"></label>
                 *@                <select id='selUser' class="form-control" style="width:300px;height:50px;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;">
                     <option value='0'>Select State</option>
-                    <option value='1'>SRM</option>
-                    <option value='2'>KRCT</option>
-                    <option value='3'>MKCE</option>
-                    <option value='4'>HICET</option>
-                    <option value='5'>PSG</option>
+                    <option value='1'>TamilNadu</option>
+                    <option value='2'>Kerala</option>
+                    <option value='3'>Karnataka</option>
+                    <option value='4'>AP</option>
+                    <option value='5'>MP</option>
                     <option value='6'>IIIT</option>
                     <option value='7'>MIT</option>
                 </select>
@@ -63,8 +61,8 @@
                 <input asp-for="ContactNo" class="form-control" placeholder="Enter Phone Number" style="width:300px;height:50px;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;" />
                 <span asp-validation-for="ContactNo" class="text-danger"></span>
             </div>
+          
             
-        </form>
     </div>
 </div>
 
