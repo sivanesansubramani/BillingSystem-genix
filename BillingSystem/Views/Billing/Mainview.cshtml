@@ -6,33 +6,33 @@
 
 <div class="size">
 
-  <div>
+  <div >
         <form asp-action="Creates">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <div class="form-group" required>
                 <table align="left">
                 <thead>
                     <tr>
                         <th width="1000">
-                            <partial name="_BillingPartial" model="Model.BillingCreate" />
+                                <partial name="_BillingPartial" model="Model.BillingCreate" required />
                         </th>
 
                         <th width="1000">
-                            <partial name="_ShippingPartial" model="Model.ShippingCreate" />
+                                <partial name="_ShippingPartial" model="Model.ShippingCreate" required />
                         </th>
                     </tr>
                 </thead>
             </table>
             </div>
 
-        <div class="form-group">
+            <div class="form-group" required>
         <table>
             <tr>
-                <partial name="_Addproduct" model="Model.AddProduct" />
+                        <partial name="_Addproduct" model="Model.AddProduct" required />
             </tr>
-           @*  <tr>
-                <partial name="_Cart" model="Model.Cart" />
-            </tr> *@
+             <tr>
+                    <partial name="_Cart" model="Model.Cart" required />
+            </tr> 
         </table>
        </div>
     <div class="form-group">
