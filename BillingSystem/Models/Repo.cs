@@ -38,7 +38,84 @@ namespace BillingSystem.Models
             }
         }
 
-        public List<AddProduct> Selects()
+        public AddProduct Getproduct(int No)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(connectionString);
+                var connection = new SqlConnection(connectionString);
+                con.Open();
+                var product = connection.QueryFirst<AddProduct>($"exec GetproductbyNo {No} ");
+                con.Close();
+
+
+
+                return product;
+
+
+            }
+
+            catch (SqlException er)
+            {
+                throw;
+            }
+            catch (Exception r)
+            {
+                throw r;
+            }
+        }
+
+        public void InsertProduct(AddProduct pro)
+        {
+
+            try
+            {
+                SqlConnection con = new SqlConnection(connectionString);
+
+                con.Open();
+                con.Execute($" exec Selectproduct'{pro.Code}', '{pro.ProductName}','{pro.Quantity}','{pro.Unitprice}','{pro.Subtotal}'");
+
+                con.Close();
+
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
+        public void Delete(int No)
+        {
+            try
+            {
+
+
+                SqlConnection con = new SqlConnection(connectionString);
+
+                con.Open();
+                con.Execute($" exec Deleteproduct {No}");
+
+                con.Close();
+
+            }
+            catch (SqlException ed)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+
+
+        /*public List<AddProduct> Selects()
         {
             var result = new List<AddProduct>();
             var firstproduct = new AddProduct();
@@ -52,6 +129,6 @@ namespace BillingSystem.Models
             result.Add(firstproduct);
 
             return result;
-        }
+        }*/
     }
 }

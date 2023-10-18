@@ -6,51 +6,46 @@
 <hr\>
 <h4>AddProduct</h4>
 <div class="row">
-    <div class="col-md-4">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <table>
-                <thead>
-                    <tr>
-
-               <th>
-
-
-                            <div class="form-group" required>
-@*                 <label asp-for="ProductName" class="control-label"></label>   *@
-                                <select id="ProductName" name="ProductName" required class="form-control" style="width:400px;height:50px;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;">
-                                        <option value='0'>Select Product</option>
-                                        <option value='1'>SRM</option>
-                                        <option value='2'>KRCT</option>
-                                        <option value='3'>MKCE</option>
-                                        <option value='4'>HICET</option>
-                                        <option value='5'>PSG</option>
-                                        <option value='6'>IIIT</option>
-                                        <option value='7'>MIT</option>
-                                    </select>
-                                    <div id='result'></div>
-@*  <input asp-for="ProductName" class="form-control" placeholder=" Select Product" style="color:white; width:400px;height:50px; padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;" />
- *@                <span asp-validation-for="ProductName" class="text-danger"></span>
+<div class="col-md-4">
+     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <table>
+          <thead>
+             <tr>
+                <th>
+                  <div class="form-group" required>
+                         <select id="ProductName" name="ProductName" required class="form-control" style="width:400px;height:50px;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;">
+                               <option value='0'>Select Product</option>
+                               <option value='1'>SRM</option>
+                               <option value='2'>KRCT</option>
+                               <option value='3'>MKCE</option>
+                               <option value='4'>HICET</option>
+                               <option value='5'>PSG</option>
+                               <option value='6'>IIIT</option>
+                               <option value='7'>MIT</option>
+                            </select>
+           <div id='result'></div>
+             <span asp-validation-for="ProductName" class="text-danger"></span>
             </div>
+        </th>
 
-                        </th>
-                        <th>
+       <th>
+         <div class="form-group">
+                <input asp-for="Quantity" class="form-control" required placeholder="Enter Quantity" style="width:200px;height:50px; padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;" />
+                     <span asp-validation-for="Quantity" class="text-danger"></span>
+                   </div>
+      </th>
 
-                        
-            <div class="form-group">
-@*                 <label asp-for="Quantity" class="control-label"></label>
-                                *@  <input asp-for="Quantity" class="form-control" required placeholder="Enter Quantity" style="width:200px;height:50px; padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;" />
-                <span asp-validation-for="Quantity" class="text-danger"></span>
-            </div>
-                        </th>
-                        <th>
+      <th>
+                            <form asp-action="Insert">
+                                <input type="submit" value="Add" class="m-3" />
+                            </form>
+       @*  <div class="form-group" style="background-color:white">
+        <input type="submit" value="Add" class="m-3" style="width:80px;height:50px ;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;" />
+        </div>
+      </th> *@
 
-            <div class="form-group" style="background-color:white">
-               <input type="submit" value="Add" class="m-3" style="width:80px;height:50px ;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;" />
-            </div>
-
-                        </th>
-                    </tr>
-                </thead>
-            </table>
-    </div>
+             </tr>
+        </thead>
+       </table>        
+     </div>
 </div>

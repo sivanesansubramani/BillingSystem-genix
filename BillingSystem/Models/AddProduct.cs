@@ -9,7 +9,7 @@ namespace BillingSystem.Models
         [Required]
         public string ProductName { get; set; }
         [Required]
-        public string Quantity { get; set; }
+        public int Quantity { get; set; }
         public int Unitprice { get; set; }
         public int Subtotal { get; set; }
 

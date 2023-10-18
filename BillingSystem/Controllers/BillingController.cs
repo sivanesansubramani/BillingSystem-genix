@@ -27,6 +27,8 @@ namespace BillingSystem.Controllers
              return View("Mainview",model);
         
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Creates(Commonview data)
         {
             try
@@ -48,19 +50,30 @@ namespace BillingSystem.Controllers
             }
         }
 
-        // GET: BillingController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Insert (AddProduct data)
         {
-            return View();
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    obj1.InsertProduct(data);
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    return View("Mainview", data);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return View("Error");
+            }
         }
 
-        // GET: BillingController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
 
-        // POST: BillingController/Create
+
+    
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -97,18 +110,20 @@ namespace BillingSystem.Controllers
         }
 
         // GET: BillingController/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int No)
         {
-            return View();
+            var result = obj1.Getproduct(No);
+            return View("Delete",result);
         }
 
         // POST: BillingController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Remove(int No)
         {
             try
             {
+                obj1.Delete(No);
                 return RedirectToAction(nameof(Index));
             }
             catch
