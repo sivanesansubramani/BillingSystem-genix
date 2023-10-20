@@ -30,11 +30,16 @@
             <tr>
                         <partial name="_Addproduct" model="Model.AddProduct" required />
             </tr>
-              <tr>
+               <tr>
                     <partial name="_Cart" model="Model.Cart" required />
-            </tr>  
+            </tr> 
+                <div style="text-align:end">
+                    <h3>Total Amount: ₹<span id="totalAmount">0.00</span></h3>
+                </div>
         </table>
+        
        </div>
+
         <form asp-action="Creates">
             <input type="submit" value="SUBMIT ORDER" class="m-3" />
 

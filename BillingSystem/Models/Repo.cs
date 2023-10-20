@@ -9,7 +9,7 @@ namespace BillingSystem.Models
 
         public Repo()
         {
-            connectionString = @"Data Source=(localdb)\ProjectModels;Initial Catalog=BillingSystem;Integrated Security=False;Connect Timeout=30;Encrypt=False";
+            connectionString = @"Data Source=(localdb)\ProjectModels;Initial Catalog=Billdata;Integrated Security=False;Connect Timeout=30;Encrypt=False";
         }
 
         public List<AddProduct> ListProduct()
@@ -111,6 +111,32 @@ namespace BillingSystem.Models
                 throw ex;
             }
 
+        }
+
+        public List<Total> Totalamount()
+        {
+            try
+            {
+                List<Total> constrain = new List<Total>();
+
+                var connection = new SqlConnection(connectionString);
+                connection.Open();
+                constrain = connection.Query<Total>($" exec Total ").ToList();
+                connection.Close();
+
+                return constrain;
+
+
+            }
+
+            catch (SqlException er)
+            {
+                throw;
+            }
+            catch (Exception r)
+            {
+                throw r;
+            }
         }
 
 

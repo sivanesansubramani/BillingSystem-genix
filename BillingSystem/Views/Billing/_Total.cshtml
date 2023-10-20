@@ -1,0 +1,33 @@
+﻿@model IEnumerable<BillingSystem.Models.Total>
+
+@{
+    ViewData["Title"] = "_Total";
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalAmount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TotalAmount)
+        </dt>
+        <dd class="col-sm-10">
+@*             @Html.DisplayFor(model => model.TotalAmount)
+ *@        </dd>
+@*  @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalAmount)
+            </td>
+            
+        </tr> 
+} *@
+    </tbody>
+</table>

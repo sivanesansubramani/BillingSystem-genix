@@ -7,6 +7,8 @@
 <h4>AddProduct</h4>
 <div class="row">
 <div class="col-md-4">
+
+            <form asp-action="Insert">
      <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <table>
           <thead>
@@ -36,7 +38,6 @@
       </th>
 
       <th>
-                            <form asp-action="Insert">
                                 <input type="submit" value="Add" class="m-3" />
                             </form>
        @*  <div class="form-group" style="background-color:white">

@@ -27,6 +27,15 @@ namespace BillingSystem.Controllers
              return View("Mainview",model);
         
         }
+
+        public ActionResult Totalamount()
+        {
+            var total = new Commonview();
+            total.Total = new List<Total>();
+            total.Total=obj1.Totalamount();
+            return View("Mainview", total);
+
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Creates(Commonview data)
@@ -54,6 +63,9 @@ namespace BillingSystem.Controllers
         {
             try
             {
+                ModelState.Remove("Code");
+                ModelState.Remove("Quantity");
+                ModelState.Remove("ProductName");
                 if (ModelState.IsValid)
                 {
                     obj1.InsertProduct(data);
