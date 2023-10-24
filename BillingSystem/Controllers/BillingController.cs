@@ -71,6 +71,7 @@ namespace BillingSystem.Controllers
                 ModelState.Remove("Code");
                 ModelState.Remove("Quantity");
                 ModelState.Remove("ProductName");
+
                 if (ModelState.IsValid)
                 {
 
