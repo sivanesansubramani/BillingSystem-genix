@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace BillingSystem.Controllers
 {
@@ -9,11 +10,13 @@ namespace BillingSystem.Controllers
     {
         public Commonview obj;
         public Repo obj1;
+        public dropdownrepo obj2;
 
         public BillingController() 
         { 
             obj = new Commonview();
             obj1 = new Repo();
+            obj2= new dropdownrepo();
         }
         public ActionResult Index()
         {
@@ -21,6 +24,8 @@ namespace BillingSystem.Controllers
           model.BillingCreate=new BillingAddressess();
             model.ShippingCreate=new ShippingAddress();
             model.AddProduct=new AddProduct();
+            model.ProductDrop = obj2.ListProduct();
+
             model.Cart = new List<AddProduct>();
             model.Cart= obj1.ListProduct();
     
@@ -68,11 +73,14 @@ namespace BillingSystem.Controllers
                 ModelState.Remove("ProductName");
                 if (ModelState.IsValid)
                 {
+
                     obj1.InsertProduct(data);
                     return RedirectToAction(nameof(Index));
                 }
                 else
                 {
+                    data.ProductDrop = obj2.ListProduct();
+
                     return View("Mainview", data);
 
                 }

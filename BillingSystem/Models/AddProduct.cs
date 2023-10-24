@@ -4,6 +4,10 @@ namespace BillingSystem.Models
 {
     public class AddProduct
     {
+        public AddProduct()
+        {
+            ProductDrop = new List<Dropdownmodels>();
+        }
         public int No { get; set; }
         public string Code { get; set; }
         public string ProductName { get; set; }
@@ -13,7 +17,8 @@ namespace BillingSystem.Models
 
         public int Total { get; set; }
 
-        
+        public List<Dropdownmodels> ProductDrop { get; set; }
+
 
     }
 }

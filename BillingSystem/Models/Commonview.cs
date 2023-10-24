@@ -15,6 +15,8 @@ namespace BillingSystem.Models
         public AddProduct AddProduct { get; set; }
         public List<AddProduct> Cart {  get; set; }
 
+        public List<Dropdownmodels> ProductDrop { get; set; }
+
         public List<Total> Total { get; set; }
 
 
