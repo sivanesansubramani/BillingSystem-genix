@@ -15,9 +15,9 @@
              <tr>
                 <th>
                   <div class="form-group" required>
-                                    <select class="form-control" required style="width:400px;height:50px;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;" asp-for="ProductName" asp-items="@(new SelectList(Model.ProductDrop,"id","Product"))">
+                                   @*  <select class="form-control" asp-for="ProductName" asp-items="@(new SelectList(Model.ProductDrop,"id","ProductName"))">
                                         <option>--Select Product--</option>
-                                    </select>
+                                    </select> *@
                          @* <select id="ProductName" name="ProductName" required class="form-control" style="width:400px;height:50px;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;">
                                <option value='0'>Select Product</option>
                                <option value='1'>SRM</option>
@@ -29,6 +29,8 @@
                                <option value='7'>MIT</option>
                             </select>
            <div id='result'></div> *@
+                                    <input asp-for="ProductName" class="form-control" required placeholder="Enter Quantity" style="width:400px;height:50px; padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;" />
+
              <span asp-validation-for="ProductName" class="text-danger"></span>
             </div>
         </th>

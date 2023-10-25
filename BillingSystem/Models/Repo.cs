@@ -20,7 +20,7 @@ namespace BillingSystem.Models
 
                 var connection = new SqlConnection(connectionString);
                 connection.Open();
-                constrain = connection.Query<AddProduct>($" exec GetproductNo ").ToList();
+                constrain = connection.Query<AddProduct>($"  exec List ").ToList();
                 connection.Close();
 
                 return constrain;
@@ -45,7 +45,7 @@ namespace BillingSystem.Models
                 SqlConnection con = new SqlConnection(connectionString);
                 var connection = new SqlConnection(connectionString);
                 con.Open();
-                var product = connection.QueryFirst<AddProduct>($"exec GetproductbyNo {No} ");
+                var product = connection.QueryFirst<AddProduct>($"  exec ListNo'{No}' ");
                 con.Close();
 
 
