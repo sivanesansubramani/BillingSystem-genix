@@ -43,7 +43,7 @@ namespace BillingSystem.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Creates(Commonview data)
+        public ActionResult Creates()
         {
             try
             {
@@ -54,7 +54,7 @@ namespace BillingSystem.Controllers
                 }
                 else
                 {
-                    return View("Mainview", data);
+                    return View("Mainview");
 
                 }
             }
@@ -97,10 +97,11 @@ namespace BillingSystem.Controllers
     
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Clean()
         {
             try
             {
+                obj1.Cleans();
                 return RedirectToAction(nameof(Index));
             }
             catch

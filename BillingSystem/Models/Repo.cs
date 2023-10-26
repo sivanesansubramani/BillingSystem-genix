@@ -113,6 +113,31 @@ namespace BillingSystem.Models
 
         }
 
+        public void Cleans()
+        {
+            try
+            {
+
+
+                SqlConnection con = new SqlConnection(connectionString);
+
+                con.Open();
+                con.Execute($" exec DeleteRecord");
+
+                con.Close();
+
+            }
+            catch (SqlException ed)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
         public List<Total> Totalamount()
         {
             try
