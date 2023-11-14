@@ -110,35 +110,15 @@ namespace BillingSystem.Controllers
             }
         }
 
-        // GET: BillingController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
+     
+      
 
-        // POST: BillingController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: BillingController/Delete/5
         public ActionResult Delete(int No)
         {
             var result = obj1.Getproduct(No);
             return View("Delete",result);
         }
 
-        // POST: BillingController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Remove(int No)
