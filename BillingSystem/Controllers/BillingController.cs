@@ -11,12 +11,14 @@ namespace BillingSystem.Controllers
         public Commonview obj;
         public Repo obj1;
         public dropdownrepo obj2;
+        public Total obj3;
 
         public BillingController() 
         { 
             obj = new Commonview();
             obj1 = new Repo();
             obj2= new dropdownrepo();
+            obj3=new Total();
         }
         public ActionResult Index()
         {
@@ -28,8 +30,10 @@ namespace BillingSystem.Controllers
 
             model.Cart = new List<AddProduct>();
             model.Cart= obj1.ListProduct();
-    
-             return View("Mainview",model);
+            obj3.Totalamount();
+
+
+            return View("Mainview",model);
         
         }
 
@@ -110,8 +114,20 @@ namespace BillingSystem.Controllers
             }
         }
 
-     
-      
+        public ActionResult Total()
+        {
+            try
+            {
+                obj1.Totalamount();
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+
 
         public ActionResult Delete(int No)
         {

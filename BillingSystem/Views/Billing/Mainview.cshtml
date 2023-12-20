@@ -7,7 +7,9 @@
 <div class="size">
 
   <div >
-        
+        <form asp-action="Creates">
+
+       
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group" required>
                 <table align="left">
@@ -24,6 +26,8 @@
                 </thead>
             </table>
             </div>
+            <input type="submit" value="SUBMIT ADDRESS" class="m-3" required />
+        </form>
 
             <div class="form-group" required>
         <table>
@@ -33,10 +37,13 @@
             </tr>
                <tr>
                     <partial name="_Cart" model="Model.Cart" required />
-            </tr> 
-                <div style="text-align:end">
-                    <h3>Total Amount: ₹<span id="totalAmount">0.00</span></h3>
-                </div>
+            </tr>
+              @*   <tr>
+                    <partial name="_Total" model="Model.Total" required />
+                </tr *@
+               @*  <div style="text-align:end" class="tot-amt">
+                    <h3>Total Amount: ₹<span id="totalAmount">1000.00</span></h3>
+                </div> *@
         </table>
         
        </div>

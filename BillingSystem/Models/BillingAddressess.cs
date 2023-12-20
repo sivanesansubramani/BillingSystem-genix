@@ -4,17 +4,17 @@ namespace BillingSystem.Models
 {
     public class BillingAddressess
     {
-        [Required]
+        [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Address is required")]
         public String Address { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Address 2 is required")]
        public string Address2 { get; set; }
-        [Required]
+        [Required(ErrorMessage = "City is required")]
         public String City { get; set; }
-        [Required]
+        [Required(ErrorMessage = "State is required")]
         public String State { get; set; }
-        [Required]
+        [Required(ErrorMessage = "ContactNo is required")]
         [RegularExpression(@"^[0-9]{10}$")]
         public string ContactNo { get; set; }
     }
