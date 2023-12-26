@@ -10,14 +10,14 @@
     <div class="col-md-4">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+            <label asp-for="Name" class="control-label"></label><span asp-validation-for="Name" class="text-danger">*</span>
+
                 <input asp-for="Name" class="form-control" required placeholder="Enter Name" style="width:300px;height:50px;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;">
-                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
+            <label asp-for="Address" class="control-label"></label><span asp-validation-for="Address" class="text-danger">*</span>
+
             <input asp-for="Address" class="form-control" required placeholder="Address 1" style="width:300px;height:50px;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;" />
-                <span asp-validation-for="Address" class="text-danger"></span>
             </div>
             <div class="form-group">
                 @*                 <label asp-for="Address2" class="control-label"></label>
@@ -58,9 +58,9 @@
 
             </div>
             <div class="form-group">
-                <label asp-for="ContactNo" class="control-label"></label>
+            <label asp-for="ContactNo" class="control-label"></label><span asp-validation-for="ContactNo" class="text-danger">*</span>
+
             <input asp-for="ContactNo" class="form-control" required placeholder="Enter Phone Number" style="width:300px;height:50px;padding: 10px;margin-bottom: 10px;border: 1px solid #ccc;border-radius: 4px;font-size: 16px;" />
-                <span asp-validation-for="ContactNo" class="text-danger"></span>
             </div>
 
     </div>

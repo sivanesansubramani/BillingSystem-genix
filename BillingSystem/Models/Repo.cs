@@ -138,31 +138,7 @@ namespace BillingSystem.Models
 
         }
 
-        public List<Total> Totalamount()
-        {
-            try
-            {
-                List<Total> constrain = new List<Total>();
-
-                var connection = new SqlConnection(connectionString);
-                connection.Open();
-                constrain = connection.Query<Total>($" exec Total ").ToList();
-                connection.Close();
-
-                return constrain;
-
-
-            }
-
-            catch (SqlException er)
-            {
-                throw;
-            }
-            catch (Exception r)
-            {
-                throw r;
-            }
-        }
+      
 
 
 

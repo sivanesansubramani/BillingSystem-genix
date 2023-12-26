@@ -10,15 +10,11 @@ namespace BillingSystem.Controllers
     {
         public Commonview obj;
         public Repo obj1;
-        public dropdownrepo obj2;
-        public Total obj3;
 
         public BillingController() 
         { 
             obj = new Commonview();
             obj1 = new Repo();
-            obj2= new dropdownrepo();
-            obj3=new Total();
         }
         public ActionResult Index()
         {
@@ -26,25 +22,16 @@ namespace BillingSystem.Controllers
           model.BillingCreate=new BillingAddressess();
             model.ShippingCreate=new ShippingAddress();
             model.AddProduct=new AddProduct();
-            model.ProductDrop = obj2.ListProduct();
 
             model.Cart = new List<AddProduct>();
             model.Cart= obj1.ListProduct();
-            obj3.Totalamount();
 
 
             return View("Mainview",model);
         
         }
 
-        public ActionResult Totalamount()
-        {
-            var total = new Commonview();
-            total.Total = new List<Total>();
-            total.Total=obj1.Totalamount();
-            return View("Mainview", total);
-
-        }
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Creates()
@@ -84,7 +71,6 @@ namespace BillingSystem.Controllers
                 }
                 else
                 {
-                    data.ProductDrop = obj2.ListProduct();
 
                     return View("Mainview", data);
 
@@ -114,18 +100,7 @@ namespace BillingSystem.Controllers
             }
         }
 
-        public ActionResult Total()
-        {
-            try
-            {
-                obj1.Totalamount();
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+       
 
 
 
